@@ -106,7 +106,7 @@ CREATE TABLE user (
     pass_hash TEXT NOT NULL
 )
 ```
-
+ 
 ### 2. Create a sign-up form
 
 Serve this from a `/user/new` route, or similar...
