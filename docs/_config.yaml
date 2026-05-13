@@ -1,0 +1,8 @@
+title: Flask Starter
+description: A starter Flask, Jinja, SQLite and PicoCSS app
+author: Digital Technologies Dept.
+
+# If development is true, guides will be shown
+development: true
+# PicoCSS colour theme: https://picocss.com/docs/version-picker
+picotheme: default

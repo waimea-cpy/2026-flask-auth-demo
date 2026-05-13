@@ -1,0 +1,54 @@
+{#=====================================================
+  Base template
+  - Used as the basis of all pages
+=====================================================#}
+
+<!DOCTYPE html>
+
+<html lang="en" data-theme="light">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Creatures {% block title %}{% endblock %}</title>
+
+    <link rel="icon" href="/static/images/icon.svg">
+
+    <script src="/static/js/utils.js"></script>
+
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/messages.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/">
+            <img src="/static/images/icon.svg" alt="Creature Icon" class="logo">
+        </a>
+
+        <h1>Creatures</h1>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/creatures">Creature List</a>
+            <a href="/help">Help</a>
+        </nav>
+    </header>
+
+    {# Show flash messages from any previous events #}
+    {% include "partials/messages.jinja" %}
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</body>
+
+</html>
+

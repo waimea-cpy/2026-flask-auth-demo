@@ -1,0 +1,30 @@
+{#=====================================================
+  Creature List page
+=====================================================#}
+
+{% extends 'pages/base.jinja' %}
+
+
+{% block content %}
+
+    <h2>List of Creatures</h2>
+
+    <section id="creatures">
+
+        {% for creature in creatures %}
+
+            <div class="creature">
+                <h3>{{ creature.name }}</h3>
+                <p>Species: <strong>{{ creature.species }}</strong></p>
+            </div>
+
+        {% else %}
+
+            <p>No Creatures!</p>
+
+        {% endfor %}
+
+    </section>
+
+{% endblock %}
+

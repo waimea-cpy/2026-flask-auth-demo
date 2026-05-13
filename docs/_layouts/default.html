@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title | default: site.title | default: site.github.repository_name }}</title>
+    <link rel="icon" href="{{ "/assets/images/notes.svg" | relative_url }}">
+
+    {% if site.picotheme and site.picotheme != "azure" and site.picotheme != "default" %}
+        {% assign theme = "." | append: site.picotheme | downcase %}
+    {% endif %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless{{ theme }}.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@catppuccin/highlightjs/css/catppuccin-mocha.css">
+    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/django.min.js"></script>
+    <script src="{{ "/assets/js/lang-defs.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/highlight.js" | relative_url }}"></script>
+</head>
+
+<body {% if site.development %} class="dev-mode" {% endif %}>
+    <header>
+        <nav>
+
+            <ul>
+                <li>
+                    <hgroup>
+                        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+                        <p>{{ site.description | default: site.github.project_tagline }}</p>
+                        <p><em>{{ site.author | default: site.github.owner_name }} @ Waimea College</em></p>
+                    </hgroup>
+                </li>
+            </ul>
+
+            <ul>
+                <li><a role="button" class="guides" href="{{ "/guides/" | absolute_url }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-question-mark-icon lucide-message-circle-question-mark"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                    Guides
+                </a></li>
+                <li><a role="button" href="https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    GitHub
+                </a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <aside class="guides">
+        <h3>Guides</h3>
+        <ul>
+            <li><a href="{{ "/guides/quick.html"     | absolute_url }}">Quick Start</a></li>
+            <li><a href="{{ "/guides/flask.html"     | absolute_url }}">How Does Flask Work?</a></li>
+            <li><a href="{{ "/guides/structure.html" | absolute_url }}">Project Structure</a></li>
+            <li><a href="{{ "/guides/crud.html"      | absolute_url }}">Simple CRUD App</a></li>
+        </ul>
+        <h4>App Development</h4>
+        <ul>
+            <li><a href="{{ "/guides/setup.html"     | absolute_url }}">Flask Setup &amp; Run</a></li>
+            <li><a href="{{ "/guides/routes.html"    | absolute_url }}">Routes &amp; Handlers</a></li>
+            <li><a href="{{ "/guides/flash.html"     | absolute_url }}">Flash Messages</a></li>
+            <li><a href="{{ "/guides/session.html"   | absolute_url }}">Session Management</a></li>
+            <li><a href="{{ "/guides/jinja.html"     | absolute_url }}">Jinja Templates</a></li>
+            <li><a href="{{ "/guides/schema.html"    | absolute_url }}">Database Schema</a></li>
+            <li><a href="{{ "/guides/sqlite.html"    | absolute_url }}">SQLite Queries</a></li>
+            <li><a href="{{ "/guides/forms.html"     | absolute_url }}">Form Data Processing</a></li>
+            <li><a href="{{ "/guides/images.html"    | absolute_url }}">Image / File Upload</a></li>
+            <li><a href="{{ "/guides/auth.html"      | absolute_url }}">User Authentication</a></li>
+        </ul>
+        <h4>Additional Guides</h4>
+        <ul>
+            <li><a href="{{ "/guides/tools.html"     | absolute_url }}">Design &amp; Dev. Tools</a></li>
+            <li><a href="{{ "/guides/vscode.html"    | absolute_url }}">VS Code Setup</a></li>
+            <li><a href="{{ "/guides/git.html"       | absolute_url }}">Using Git &amp; GitHub</a></li>
+            <li><a href="{{ "/guides/hosting.html"   | absolute_url }}">Hosting Your App</a></li>
+            <li><a href="{{ "/guides/pages.html"     | absolute_url }}">GitHub Pages for Docs</a></li>
+            <li><a href="{{ "/guides/learn.html"     | absolute_url }}">Learning Resources</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        {{ content }}
+    </main>
+
+</body>
+</html>
+

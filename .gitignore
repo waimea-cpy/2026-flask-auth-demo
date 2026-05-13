@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Flask
+instance/
+.env
+
+# Database
+# *.sqlite
+# *.db
+# app/db/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+

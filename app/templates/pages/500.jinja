@@ -1,0 +1,19 @@
+{% extends "pages/base.jinja" %}
+
+{% block title %}
+    - Server Error (500)
+{% endblock %}
+
+{% block content %}
+    <h1>500</h1>
+    <h2>Server Error</h2>
+    <p>Something went wrong. Please try again.</p>
+
+    {% if config.DEBUG %}
+        <p><small>
+            💡 Check the terminal/console for detailed error logs
+        </small></p>
+    {% endif %}
+
+    <a href="/" role="button">← Home</a>
+{% endblock %}

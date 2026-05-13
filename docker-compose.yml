@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app        # live-reloads code changes without rebuilding
+    env_file:
+      - .env          # picks up the existing .env file automatically
+    tty: true         # Enable colour output
